@@ -1,5 +1,6 @@
 package com.lambdaschool.todos.service;
 
+import com.lambdaschool.todos.model.Todo;
 import com.lambdaschool.todos.model.User;
 
 import java.util.List;
@@ -7,6 +8,8 @@ import java.util.List;
 public interface UserService {
 
     List<User> findAll();
+
+    User findUserByUsername(String username);
 
     User findUserById(long id);
 
