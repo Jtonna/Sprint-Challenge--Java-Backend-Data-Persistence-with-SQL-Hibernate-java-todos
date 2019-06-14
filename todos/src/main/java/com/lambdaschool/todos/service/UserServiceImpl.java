@@ -1,9 +1,9 @@
 package com.lambdaschool.todos.service;
 
-import com.lambdaschool.zoos.model.User;
-import com.lambdaschool.zoos.model.UserRoles;
-import com.lambdaschool.zoos.repository.RoleRepository;
-import com.lambdaschool.zoos.repository.UserRepository;
+import com.lambdaschool.todos.model.User;
+import com.lambdaschool.todos.model.UserRoles;
+import com.lambdaschool.todos.repository.RoleRepository;
+import com.lambdaschool.todos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

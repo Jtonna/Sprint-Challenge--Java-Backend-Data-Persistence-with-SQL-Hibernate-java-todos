@@ -1,6 +1,6 @@
 package com.lambdaschool.todos.service;
 
-import com.lambdaschool.zoos.model.Role;
+import com.lambdaschool.todos.model.Role;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.lambdaschool.todos.service;
 
-import com.lambdaschool.zoos.model.User;
+import com.lambdaschool.todos.model.User;
 
 import java.util.List;
 
