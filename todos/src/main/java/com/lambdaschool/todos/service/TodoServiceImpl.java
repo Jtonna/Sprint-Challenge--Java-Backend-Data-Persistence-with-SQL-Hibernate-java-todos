@@ -1,16 +1,22 @@
 package com.lambdaschool.todos.service;
 
 import com.lambdaschool.todos.model.Todo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service(value = "todoservice")
 public class TodoServiceImpl implements TodoService {
 
+    @Autowired
+    private TodoRepository help;
     @Override
     public List<Todo> findAllById(long id) {
-        return null;
+        List<Todo> todolist = new ArrayList<>();
+        help.getAllById(id).iterator().forEachRemaining(todolist::add);
+        return todolist;
     }
 
     @Override
