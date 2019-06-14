@@ -1,9 +1,8 @@
 package com.lambdaschool.todos.model;
 
-import javax.persistence.*;
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import static javax.persistence.TemporalType.TIMESTAMP;
+import javax.persistence.*;
 
 @Entity
 @Table(name="todo")
@@ -13,14 +12,21 @@ public class Todo{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long todoid;
 
-    @Column(name="description", nullable = false, unique = true )
-    private String description;
-
-    @Column(name = "datestarted")
-    protected Date datestarted;
+    // not sure how to do the date time
+    @Column(nullable = false)
+    private String description, datestarted;
 
     @Column(name="completed")
     private boolean completed;
 
+    // this adds the user id foreign key
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userid", nullable = false)
+    @JsonIgnoreProperties({"todos", "hibernateLazyInitializer"})
+    private User user;
+
+    // generated constructor, getters & setters
+
+    
 
 }
