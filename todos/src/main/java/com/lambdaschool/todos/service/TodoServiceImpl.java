@@ -44,6 +44,23 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Todo update(Todo todo, long id) {
-        return null;
+        Todo currentTodo = help.findById(id).orElseThrow(EntityNotFoundException::new);
+
+        if (todo.getDatestarted() != null){
+            currentTodo.setDatestarted(todo.getDatestarted());
+        }
+
+        if (todo.getDatestarted() != null){
+            currentTodo.setDatestarted(todo.getDatestarted());
+        }
+
+        if (todo.isCompleted()){
+            currentTodo.setCompleted(true);
+        } else {
+            currentTodo.setCompleted(false);
+        }
+
+        help.save(currentTodo);
+        return currentTodo;
     }
 }
