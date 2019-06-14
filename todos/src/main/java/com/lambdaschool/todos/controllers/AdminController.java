@@ -1,7 +1,7 @@
 package com.lambdaschool.todos.controllers;
 
-import com.lambdaschool.zoos.model.Zoo;
-import com.lambdaschool.zoos.service.ZooService;
+import com.lambdaschool.todos.model.Todo;
+import com.lambdaschool.todos.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
