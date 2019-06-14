@@ -17,38 +17,4 @@ public class TodoServiceImpl implements TodoService{
         return list;
     }
 
-    @Override
-    public Todo findTodoById(long id) {
-        return null;
-    }
-
-    @Override
-    public Todo findTodoByName(String name) {
-        return null;
-    }
-
-    @Override
-    public void delete(long id) {
-
-    }
-
-    @Override
-    public Todo save(Todo todo) {
-        return null;
-    }
-
-    @Override
-    public Todo update(Todo todo, long id) {
-        return null;
-    }
-
-    @Override
-    public void deleteTodo(long todosid) {
-
-    }
-
-    @Override
-    public void saveTodo(long todosid) {
-
-    }
 }

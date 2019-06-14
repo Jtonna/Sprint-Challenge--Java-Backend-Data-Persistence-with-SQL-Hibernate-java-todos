@@ -1,6 +1,6 @@
-package com.lambdaschool.zoos.view;
+package com.lambdaschool.todos.view;
 
-public interface CountAnimalInZoo
+public interface CountTodos
 {
     long getAnimalid();
     String getAnimaltype();
