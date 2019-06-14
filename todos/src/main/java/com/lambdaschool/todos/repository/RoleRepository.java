@@ -1,6 +1,6 @@
 package com.lambdaschool.todos.repository;
 
-import com.lambdaschool.zoos.model.Role;
+import com.lambdaschool.todos.model.Role;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
