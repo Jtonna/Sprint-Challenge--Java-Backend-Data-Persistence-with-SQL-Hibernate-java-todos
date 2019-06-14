@@ -1,6 +1,7 @@
 package com.lambdaschool.todos.service;
 
 import com.lambdaschool.todos.model.Todo;
+import com.lambdaschool.todos.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
