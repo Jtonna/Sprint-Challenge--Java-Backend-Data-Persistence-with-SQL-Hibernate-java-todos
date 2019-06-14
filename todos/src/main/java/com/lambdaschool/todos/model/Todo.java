@@ -34,10 +34,9 @@ public class Todo{
     public Todo() {
     }
 
-    public Todo(String description, String datestarted, boolean completed, User user) {
+    public Todo(String description, String datestarted, User user) {
         this.description = description;
         this.datestarted = datestarted;
-        this.completed = completed;
         this.user = user;
     }
 

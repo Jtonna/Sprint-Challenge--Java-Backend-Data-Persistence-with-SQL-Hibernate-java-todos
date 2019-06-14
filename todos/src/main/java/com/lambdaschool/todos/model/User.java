@@ -41,6 +41,13 @@ public class User extends Auditable {
     @JsonIgnoreProperties("user")
     private List<UserRoles> userRoles = new ArrayList<>();
 
+    //
+    @OneToMany(mappedBy = "user",
+            cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
+    private List<Todo> todo = new ArrayList<>();
+
+
     // generated shit
 
     public User() {
@@ -64,6 +71,15 @@ public class User extends Auditable {
     }
 
     // generated
+
+
+    public List<Todo> getTodo() {
+        return todo;
+    }
+
+    public void setTodo(List<Todo> todo) {
+        this.todo = todo;
+    }
 
     public long getUserid() {
         return userid;
