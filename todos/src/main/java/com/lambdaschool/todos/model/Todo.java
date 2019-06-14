@@ -3,6 +3,8 @@ package com.lambdaschool.todos.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name="todo")
@@ -12,9 +14,11 @@ public class Todo{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long todoid;
 
-    // not sure how to do the date time
+    // not sure how to do the date time -- figured it out, see setDateStarted
     @Column(nullable = false)
-    private String description, datestarted;
+    private String description;
+
+    private String datestarted;
 
     @Column(name="completed")
     private boolean completed;
@@ -58,7 +62,7 @@ public class Todo{
     }
 
     public void setDatestarted(String datestarted) {
-        this.datestarted = datestarted;
+        this.datestarted = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS").format(new SimpleDateFormat(datestarted));
     }
 
     public boolean isCompleted() {
