@@ -5,6 +5,7 @@ import com.lambdaschool.todos.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,16 +24,21 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Todo findTodoById(long id) {
-        return null;
+        return help.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
     public Todo save(Todo todo) {
-        return null;
+        return help.save(todo);
     }
 
     @Override
     public void delete(long id) {
+        if (help.findById(id).isPresent()){
+            help.deleteById(id);
+        } else {
+            throw new EntityNotFoundException();
+        }
 
     }
 
