@@ -3,7 +3,6 @@ package com.lambdaschool.todos.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name="todo")

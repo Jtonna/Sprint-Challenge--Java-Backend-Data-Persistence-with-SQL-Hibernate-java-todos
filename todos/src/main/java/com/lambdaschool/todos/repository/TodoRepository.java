@@ -13,6 +13,7 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
     // gets all the T0do's from the list by the id
     @Query(value = "SELECT * FROM todo WHERE todos = :userid", nativeQuery = true)
     List<Todo> getAllById(long userid);
+    // verified this is working
 
     // deletes by id
     @Transactional

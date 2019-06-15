@@ -27,12 +27,22 @@ public class TodoController {
         User currentUser = userService.findUserByUsername(((org.springframework.security.core.userdetails.User)authentication.getPrincipal()).getUsername());
         return new ResponseEntity<>(todosService.findAllById(currentUser.getUserid()), HttpStatus.OK);
     }
+    // working
+    // localhost:2019/users/users
+    // login with user : admin
+    // password: password
 
     @PostMapping(value = "/users/todos/{userid}", produces = {"application/json"}, consumes = {"application/json"})
     public ResponseEntity<?> postNewTodo(@PathVariable long userid, @RequestBody Todo todos){
         todos.setUser(userService.findUserById(userid));
         return new ResponseEntity<>(todosService.save(todos), HttpStatus.OK);
     }
+    // working
+//    {
+//        "description": "Finish worshipping Cthulu",
+//            "datestarted": "2066-06-06 06:06:06",
+//            "completed": false
+//    }
 
     @PutMapping(value = "/todoss/todosid/{todosid}", produces = {"application/json"}, consumes = {"application/json"})
     public ResponseEntity<?> updateTodo(@PathVariable long todosid, @RequestBody Todo todos){
