@@ -85,4 +85,7 @@ public class UserController
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    // hell yeah
+    // localhost:2019/users/user/3
+    // deleted barnbarn
 }

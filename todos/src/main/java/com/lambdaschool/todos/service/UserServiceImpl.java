@@ -30,7 +30,11 @@ public class UserServiceImpl implements UserDetailsService, UserService
 
     @Override
     public User findUserByUsername(String username) {
-        return null;
+        // god damnit help me this was null and i was troubleshooting why it souldnt work fgor 5 hourls
+        // up[date i cant even type im so angry
+        return userrepos.findByUsername(username);
+
+        // i hate java, i want php
     }
 
     @Transactional

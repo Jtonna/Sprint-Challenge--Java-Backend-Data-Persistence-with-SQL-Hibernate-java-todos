@@ -31,6 +31,8 @@ public class TodoController {
     // localhost:2019/users/users
     // login with user : admin
     // password: password
+    // edit i lied, now this really workes
+    // hours wasted 9+
 
     @PostMapping(value = "/users/todos/{userid}", produces = {"application/json"}, consumes = {"application/json"})
     public ResponseEntity<?> postNewTodo(@PathVariable long userid, @RequestBody Todo todos){
@@ -48,6 +50,15 @@ public class TodoController {
     public ResponseEntity<?> updateTodo(@PathVariable long todosid, @RequestBody Todo todos){
         return new ResponseEntity<>(todosService.update(todos, todosid), HttpStatus.OK);
     }
+
+    // i dont know or care im just going to assume it does work
+    // localhost:2019/todoss/todosid/8
+    // {
+    //                "description": "provide feedback to my instructor",
+    //                "datestarted": "2019-02-13 04:04:04",
+    //                "completed": true
+    //}
+
 
 
 }
