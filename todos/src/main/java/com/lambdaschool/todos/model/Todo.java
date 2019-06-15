@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name="todo")
-public class Todo{
+public class Todo extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,13 +19,12 @@ public class Todo{
 
     private String datestarted;
 
-    @Column(name="completed")
     private boolean completed;
 
     // this adds the user id foreign key
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userid", nullable = false)
-    @JsonIgnoreProperties({"todos", "hibernateLazyInitializer"})
+    @ManyToOne
+    @JoinColumn(name = "todos")
+    @JsonIgnoreProperties({"todos"})
     private User user;
 
     // generated constructor, getters & setters
@@ -33,9 +32,23 @@ public class Todo{
     public Todo() {
     }
 
-    public Todo(String description, String datestarted, User user) {
+    public Todo(String description, String datestarted, boolean completed) {
         this.description = description;
         this.datestarted = datestarted;
+        this.completed = completed;
+    }
+
+    public Todo(String description, String datestarted, User user){
+        this.description = description;
+        this.datestarted = datestarted;
+        this.user = user;
+        this.completed = false;
+    }
+
+    public Todo(String description, String datestarted, boolean completed, User user){
+        this.description = description;
+        this.datestarted = datestarted;
+        this.completed = completed;
         this.user = user;
     }
 
@@ -60,7 +73,7 @@ public class Todo{
     }
 
     public void setDatestarted(String datestarted) {
-        this.datestarted = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS").format(new SimpleDateFormat(datestarted));
+        this.datestarted = datestarted;
     }
 
     public boolean isCompleted() {

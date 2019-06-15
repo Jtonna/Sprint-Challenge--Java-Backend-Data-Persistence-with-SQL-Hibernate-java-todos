@@ -11,12 +11,12 @@ import java.util.List;
 public interface TodoRepository extends CrudRepository<Todo, Long> {
 
     // gets all the T0do's from the list by the id
-    @Query(value = "select * from todo where todos = :userid", nativeQuery = true )
+    @Query(value = "SELECT * FROM todo WHERE todos = :userid", nativeQuery = true)
     List<Todo> getAllById(long userid);
 
     // deletes by id
     @Transactional
     @Modifying
-    @Query(value = "delete from todo where userid = :userid", nativeQuery = true)
+    @Query(value = "DELETE FROM todo WHERE userid = :userid", nativeQuery = true)
     void deleteAllByUserId(long userid);
 }
